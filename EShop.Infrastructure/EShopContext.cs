@@ -1,6 +1,7 @@
 ﻿using EShop.Domain;
 using EShop.Domain.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
+using EShop.Infrastructure.EntityTypeConfiguration.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace EShop.Infrastructure
@@ -17,10 +18,18 @@ namespace EShop.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Products
             modelBuilder.ApplyConfiguration(new ProductCategoryEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductImageEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductPriceEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductDiscountEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryDiscountEntityTypeConfiguration());
+
+            //Users
+            modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new RegularUserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AdministratorUserEntityTypeConfiguration());
         }
     }
 }
