@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EShop.Domain.Images;
 
 namespace EShop.Domain.Products
 {
@@ -19,13 +17,12 @@ namespace EShop.Domain.Products
         public Product Product { get; set; }
 
         /// <summary>
-        /// Image name
+        /// Image identifier
         /// </summary>
-        public string ImageName { get; set; }
-
+        public long ImageId { get; set; }
         /// <summary>
-        /// Contents of the image
+        /// Image reference
         /// </summary>
-        public byte[] Content { get; set; }
+        public Image Image { get; set; }
     }
 }

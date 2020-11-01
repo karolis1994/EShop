@@ -1,13 +1,12 @@
-﻿using System;
+﻿using EShop.Domain.Shared;
 using System.Collections.Generic;
-using System.Text;
 
 namespace EShop.Domain.Products
 {
     /// <summary>
     /// Category of product
     /// </summary>
-    public class ProductCategory : Entity
+    public class ProductCategory : BaseEntity
     {
         /// <summary>
         /// Parent category identifier
@@ -22,5 +21,15 @@ namespace EShop.Domain.Products
         /// Sub categories of products
         /// </summary>
         public IEnumerable<ProductCategory> SubCategories { get; set; }
+
+        /// <summary>
+        /// Products of this category
+        /// </summary>
+        public IEnumerable<Product> Products { get; set; }
+
+        /// <summary>
+        /// Discounts that apply to all products inside of this category
+        /// </summary>
+        public IEnumerable<ProductCategoryDiscount> Discounts { get; set; }
     }
 }

@@ -1,14 +1,13 @@
-﻿using EShop.Domain.Products;
-using System;
-using System.Collections;
+﻿using EShop.CoreUtils;
+using EShop.Domain.Shared;
 using System.Collections.Generic;
 
-namespace EShop.Domain
+namespace EShop.Domain.Products
 {
     /// <summary>
     /// Product
     /// </summary>
-    public class Product : Entity
+    public class Product : BaseEntity
     {
         /// <summary>
         /// The name of the product
@@ -30,13 +29,28 @@ namespace EShop.Domain
         public ProductCategory Category { get; set; }
 
         /// <summary>
-        /// Product description
+        /// Product price
         /// </summary>
-        public LocalizableResourceValueObject<Product> ProductDescription { get; set; }
+        public ProductPrice Price { get; set; }
+
+        /// <summary>
+        /// Product description in different locales
+        /// </summary>
+        public IReadOnlyDictionary<Locale, string> Description { get; set; } = new Dictionary<Locale, string>();
 
         /// <summary>
         /// Images of products
         /// </summary>
         public IEnumerable<ProductImage> Images { get; set; }
+
+        /// <summary>
+        /// Product prices for various time spans
+        /// </summary>
+        public IEnumerable<ProductPrice> Prices { get; set; }
+
+        /// <summary>
+        /// Discounts that apply to the product
+        /// </summary>
+        public IEnumerable<ProductDiscount> Discounts { get; set; }
     }
 }
