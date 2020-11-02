@@ -24,8 +24,8 @@ namespace EShop.Infrastructure.EntityTypeConfiguration.Users
                 .IsRequired();
 
             builder.HasDiscriminator(e => e.Type)
-                .HasValue(typeof(RegularUser), UserType.Regular)
-                .HasValue(typeof(AdministratorUser), UserType.Administrator);
+                .HasValue<RegularUser>(UserType.Regular)
+                .HasValue<AdministratorUser>(UserType.Administrator);
         }
     }
 }

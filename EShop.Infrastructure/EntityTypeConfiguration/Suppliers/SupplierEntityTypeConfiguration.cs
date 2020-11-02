@@ -8,7 +8,7 @@ namespace EShop.Infrastructure.EntityTypeConfiguration.Suppliers
     {
         public void Configure(EntityTypeBuilder<Supplier> builder)
         {
-            builder.ToTable("", EShopContext.DefaultSchema);
+            builder.ToTable("Supplier", EShopContext.DefaultSchema);
 
             builder.HasKey(e => e.Id);
 

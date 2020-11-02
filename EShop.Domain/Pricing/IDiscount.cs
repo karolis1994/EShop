@@ -1,12 +1,11 @@
-﻿using EShop.Domain.Shared;
-using System;
+﻿using System;
 
 namespace EShop.Domain.Pricing
 {
     /// <summary>
-    /// Discount
+    /// Discount interface
     /// </summary>
-    public class Discount : BaseEntity, IDiscount
+    interface IDiscount
     {
         /// <summary>
         /// Percentage off price
