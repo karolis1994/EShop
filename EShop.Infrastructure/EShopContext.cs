@@ -53,6 +53,7 @@ namespace EShop.Infrastructure
             //Orders
             modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new OrderProductEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderBillingInformationEntityTypeConfiguration());
         }
     }
 }

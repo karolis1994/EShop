@@ -30,13 +30,22 @@ namespace EShop.Domain.Orders
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Products ordered
-        /// </summary>
-        public IEnumerable<OrderProduct> Products { get; set; }
-
-        /// <summary>
         /// Marks whethers the order was paid for by the customer
         /// </summary>
         public bool IsPaidFor { get; set; }
+
+        /// <summary>
+        /// Billing information used for this order identifier
+        /// </summary>
+        public long BillingInformationId { get; set; }
+        /// <summary>
+        /// Billing information used for this order reference
+        /// </summary>
+        public OrderBillingInformation BillingInformation { get; set; }
+
+        /// <summary>
+        /// Products ordered
+        /// </summary>
+        public IEnumerable<OrderProduct> Products { get; set; }
     }
 }
