@@ -2,6 +2,7 @@
 using EShop.Infrastructure.EntityTypeConfiguration.Billing;
 using EShop.Infrastructure.EntityTypeConfiguration.Pricing;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
+using EShop.Infrastructure.EntityTypeConfiguration.Suppliers;
 using EShop.Infrastructure.EntityTypeConfiguration.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,6 +40,10 @@ namespace EShop.Infrastructure
             //Pricing
             modelBuilder.ApplyConfiguration(new DiscountEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DiscountCouponEntityTypeConfiguration());
+
+            //Suppliers
+            modelBuilder.ApplyConfiguration(new SupplierEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SupplierProductEntityTypeConfiguration());
         }
     }
 }
