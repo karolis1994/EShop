@@ -1,6 +1,7 @@
 ﻿using EShop.CoreUtils;
 using EShop.Domain.Shared;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EShop.Domain.Products
 {
@@ -52,5 +53,10 @@ namespace EShop.Domain.Products
         /// Discounts that apply to the product
         /// </summary>
         public IEnumerable<ProductDiscount> Discounts { get; set; }
+
+        /// <summary>
+        /// Suppliers of products
+        /// </summary>
+        public IEnumerable<SupplierProduct> Suppliers { get; set; }
     }
 }
