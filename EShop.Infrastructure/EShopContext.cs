@@ -1,5 +1,6 @@
 ﻿using EShop.Domain.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Billing;
+using EShop.Infrastructure.EntityTypeConfiguration.Images;
 using EShop.Infrastructure.EntityTypeConfiguration.Pricing;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Suppliers;
@@ -20,6 +21,9 @@ namespace EShop.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Images
+            modelBuilder.ApplyConfiguration(new ImageEntityTypeConfiguration());
+
             //Products
             modelBuilder.ApplyConfiguration(new ProductCategoryEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductEntityTypeConfiguration());
