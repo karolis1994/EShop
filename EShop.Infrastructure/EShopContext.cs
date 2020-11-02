@@ -1,6 +1,7 @@
 ﻿using EShop.Domain.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Billing;
 using EShop.Infrastructure.EntityTypeConfiguration.Images;
+using EShop.Infrastructure.EntityTypeConfiguration.Orders;
 using EShop.Infrastructure.EntityTypeConfiguration.Pricing;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Suppliers;
@@ -48,6 +49,10 @@ namespace EShop.Infrastructure
             //Suppliers
             modelBuilder.ApplyConfiguration(new SupplierEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new SupplierProductEntityTypeConfiguration());
+
+            //Orders
+            modelBuilder.ApplyConfiguration(new OrderEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderProductEntityTypeConfiguration());
         }
     }
 }
