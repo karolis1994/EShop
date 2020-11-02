@@ -1,5 +1,6 @@
 ﻿using EShop.Domain;
 using EShop.Domain.Products;
+using EShop.Infrastructure.EntityTypeConfiguration.Billing;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Users;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,10 @@ namespace EShop.Infrastructure
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new RegularUserEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new AdministratorUserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new RegularUserBillingInformationEntityTypeConfiguration());
+
+            //Billing
+            modelBuilder.ApplyConfiguration(new CountryEntityTypeConfiguration());
         }
     }
 }

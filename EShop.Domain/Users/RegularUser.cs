@@ -1,6 +1,4 @@
-﻿using EShop.Domain.Billing;
-
-namespace EShop.Domain.Users
+﻿namespace EShop.Domain.Users
 {
     /// <summary>
     /// Regular user of eshop
@@ -33,6 +31,6 @@ namespace EShop.Domain.Users
         /// <summary>
         /// Billing information reference
         /// </summary>
-        public BillingInformation BillingInformation { get; set; }
+        public RegularUserBillingInformation BillingInformation { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using EShop.Domain.Billing;
-using EShop.Domain.Shared;
+﻿using EShop.Domain.Shared;
 
 namespace EShop.Domain.Users
 {
