@@ -5,7 +5,7 @@ namespace EShop.Domain.Users
     /// <summary>
     /// Shop user
     /// </summary>
-    public class User : BaseEntity
+    public abstract class User : BaseEntity
     {
         public User(UserType type)
         {
