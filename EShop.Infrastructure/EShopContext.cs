@@ -1,6 +1,6 @@
-﻿using EShop.Domain;
-using EShop.Domain.Products;
+﻿using EShop.Domain.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Billing;
+using EShop.Infrastructure.EntityTypeConfiguration.Pricing;
 using EShop.Infrastructure.EntityTypeConfiguration.Products;
 using EShop.Infrastructure.EntityTypeConfiguration.Users;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +35,10 @@ namespace EShop.Infrastructure
 
             //Billing
             modelBuilder.ApplyConfiguration(new CountryEntityTypeConfiguration());
+
+            //Pricing
+            modelBuilder.ApplyConfiguration(new DiscountEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DiscountCouponEntityTypeConfiguration());
         }
     }
 }
